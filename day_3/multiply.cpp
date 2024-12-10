@@ -19,7 +19,7 @@ int return_mult(int i, std::string line){
         }
         std::string pattern = line.substr(i+4,last_index-i-4);
         int pos = pattern.find(",");
-        if(!pos){
+        if(pos==-1){
             return 0;
         }
         
@@ -33,6 +33,7 @@ int return_mult(int i, std::string line){
         if(!left_nr or !right_nr){
             return 0;
         }
+
         
         std::cout << "got here" << std::endl;
         return left_nr*right_nr;
@@ -45,7 +46,7 @@ int return_mult(int i, std::string line){
 
 
 int main(){
-    std::string filename = "test_input.txt";
+    std::string filename = "input.txt";
     std::ifstream inFile;
     inFile.open(filename);
 
